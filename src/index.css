@@ -1,0 +1,158 @@
+/* src/App.css */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5; /* Light grey background */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top */
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.App {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: fit-content; /* Adjust width to content */
+  min-width: 300px; /* Minimum width */
+}
+
+h1 {
+  color: #1f1f1f;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+}
+
+/* GameStatus Component Styling */
+.game-status {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e9e9e9;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.game-status > div, .game-status > button {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  padding: 8px 12px;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  min-width: 60px;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.game-status button {
+  border: none;
+  background-color: #ffc107; /* Amber for reset button */
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.game-status button:hover {
+  background-color: #ffa000;
+}
+
+.game-status .status-face {
+  font-size: 1.5rem; /* Larger for the face emoji */
+  padding: 5px 10px;
+}
+
+
+/* Board Styling */
+.board {
+  display: grid;
+  border: 2px solid #bdbdbd; /* Border around the board */
+  background-color: #c0c0c0; /* Classic grey background */
+  width: fit-content; /* Fit to content */
+  margin: 0 auto; /* Center the board */
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+}
+
+/* Cell Styling */
+.cell {
+  width: 30px;  /* Fixed cell size */
+  height: 30px; /* Fixed cell size */
+  background-color: #bdbdbd; /* Default hidden cell color */
+  border: 1px solid #757575; /* Inner border for 3D effect - top/left */
+  border-right-color: #ffffff; /* Inner border for 3D effect - right */
+  border-bottom-color: #ffffff; /* Inner border for 3D effect - bottom */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+}
+
+.cell.revealed {
+  background-color: #e0e0e0; /* Revealed empty cell color */
+  border: 1px solid #bdbdbd; /* Flatter border when revealed */
+}
+
+.cell.mine {
+  background-color: #ff7043; /* Revealed mine color */
+  color: black;
+}
+
+.cell.flagged {
+  background-color: #bdbdbd; /* Keep original bg for flagged */
+  color: #d32f2f; /* Red for flag */
+}
+
+/* Colors for numbers */
+.cell.revealed.n1 { color: #1976d2; } /* Blue */
+.cell.revealed.n2 { color: #388e3c; } /* Green */
+.cell.revealed.n3 { color: #d32f2f; } /* Red */
+.cell.revealed.n4 { color: #7b1fa2; } /* Purple */
+.cell.revealed.n5 { color: #ff8f00; } /* Orange */
+.cell.revealed.n6 { color: #0097a7; } /* Cyan */
+.cell.revealed.n7 { color: #424242; } /* Grey */
+.cell.revealed.n8 { color: #212121; } /* Black */
+
+.game-over-message {
+  font-size: 1.5rem;
+  color: #d32f2f;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.win-message {
+  font-size: 1.5rem;
+  color: #388e3c;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Responsive adjustments could be added if desired */
+/* For example, scaling down cell sizes on smaller screens */
+@media (max-width: 400px) {
+  .cell {
+    width: 25px;
+    height: 25px;
+    font-size: 0.9rem;
+  }
+  .game-status > div, .game-status > button {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+    min-width: 50px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}
