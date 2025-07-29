@@ -2,6 +2,7 @@
 
 A classic Minesweeper game built with ReactJS. This project recreates the popular puzzle game where players uncover tiles and avoid hidden mines. The application uses modern React features and JavaScript, providing an interactive and responsive user experience.
 
+![Minesweeper Gameplay](public/minesweepergame.gif)
 
 ## How to Deploy Locally and Play
 
